@@ -4,6 +4,7 @@ gem 'sinatra'
 
 gem 'classify', git: 'https://github.com/oleander/classify.git'
 gem 'dinosaurus', git: 'https://github.com/dtuite/dinosaurus.git'
+gem 'sass'
 gem 'slim'
 gem 'mongoid'
 
