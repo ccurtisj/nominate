@@ -5,6 +5,7 @@ require File.join(File.dirname(__FILE__),'models', 'suggestion_request')
 
 configure do
   set :views, File.dirname(__FILE__) + "/views"
+  set :root, 	File.dirname(__FILE__)
 end
 
 Dinosaurus.configure do |config|
@@ -16,6 +17,6 @@ get '/' do
 end
 
 post '/suggestions' do
-  @suggestions = SuggestionRequest.new(params[:keywords], params[:role]).suggestions
+  @suggestions = SuggestionRequest.new(params[:keyword], params[:role]).suggestions
   slim :suggestion
 end
