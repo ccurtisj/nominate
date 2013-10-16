@@ -1,0 +1,41 @@
+doctype
+/![if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/![if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/![if IE 8] <html class="no-js lt-ie9">
+/! [if gt IE 8]><!
+html.no-js
+  /! <![endif]
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    title Class Namr
+    meta content="" name="description"
+    meta content="width=(device-width,)initial-scale=1" name="viewport"
+    /! Place favicon.ico and apple-touch-icon.png in the root directory
+    link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+
+    script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"
+  body
+    /![if lt IE 7]
+      | <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    
+    / nav class="navbar navbar-default" role="navigation"
+    /   div class="navbar-header"
+    /     a class="navbar-brand" href="#" Class Namr
+    /   div class="collapse navbar-collapse navbar-ex1-collapse"
+    /     ul class="nav navbar-nav"
+    /       li
+    /         a Home
+
+    == yield
+
+    script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
+    javascript:
+      | window.jQuery || document.write('<\/script>')
+  
+      | (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      | function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      | e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      | e.src='//www.google-analytics.com/analytics.js';
+      | r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      | ga('create','UA-XXXXX-X');ga('send','pageview');

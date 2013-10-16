@@ -1,0 +1,18 @@
+.container
+  .col-md-10.col-md-offset-1
+    h1 Class Namr
+
+    form action='/suggestions' method='post'
+      label for='keyword' Keywords
+      br/
+      textarea id='keyword' name='keyword' cols="50"
+      br/
+
+      label for='role' Class Role
+
+      - ClassType.roles.each do |role|
+        label
+          input type='radio' name='role' value=role
+            = role
+
+      input type='submit'

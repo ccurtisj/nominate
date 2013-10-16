@@ -8,9 +8,23 @@ describe "The Class Namer App" do
     Sinatra::Application
   end
 
-  it "says hello" do
-    get '/'
-    expect(last_response).to be_ok
-    expect(last_response.body).to eq('Hello World')
+  describe "GET /index" do
+
+    before { get '/' }
+
+    it "is ok" do
+      expect(last_response).to be_ok
+    end
+  end
+
+  describe "POST /suggestions" do
+
+    context "given a keyword and a role" do
+
+      it "is okay" do
+        post '/suggestions', keywords: 'wheel', role: 'creation'
+        expect(last_response).to be_ok
+      end
+    end
   end
 end

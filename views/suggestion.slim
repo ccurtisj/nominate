@@ -1,0 +1,13 @@
+.container
+  .row
+    .col-xs-12
+      a href="/" New
+  .row
+    .col-md-10.col-md-offset-1
+      - if @suggestions.any?
+        h1 Suggestion
+        ul
+          - @suggestions.each do |suggestion|
+            li= suggestion
+      - else
+        h2 Nothing
