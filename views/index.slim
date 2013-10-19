@@ -21,10 +21,12 @@
               label for='role' 2. Describe the <b>Role</b> of your class
 
             #role-options.well
-              - ClassType.roles.each_with_index do |role, i|
-                label
-                  input type='radio' name='role' value=role checked=(i==0)
-                    = role
+              ul
+                - ClassType.roles.each_with_index do |role, i|
+                  li
+                    label
+                      input type='radio' name='role' value=role checked=(i==0)
+                        = role
 
       .row
         #submit.col-md-8.col-md-offset-2
