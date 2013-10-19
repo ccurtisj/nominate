@@ -27,8 +27,28 @@ html.no-js
     /       li
     /         a Home
 
+    header
+      .container
+        .col-md-8.col-md-offset-2
+          p Nominate.io: Software Class Name Generator
+
     #wrapper
       == yield
+
+      footer
+        .row#quote
+          .col-md-8.col-md-offset-2
+            .wells
+              blockquote
+                p There are only two hard things in Computer Science: cache invalidation and <b>naming things</b>.
+
+                small
+                  | Phil Karlton
+
+        .row
+          .col-md-8.col-md-offset-2
+            p.lead
+              | Made with love by @ccurtisj
 
     script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
     script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"

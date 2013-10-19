@@ -4,28 +4,28 @@
     .col-md-12
       h1 Having Trouble Naming Your Class?
 
+
   #content
     form action='/suggestions' method='post' role="form"
       .row
-        .col-md-4.col-md-offset-2
-          .well
-            .form-group
-              h2
-                label for='keyword' 1. Domain Keyword
-              input.form-control type='text' id='keyword' name='keyword' placeholder="Widget" 
+        .col-md-8.col-md-offset-2
+          .form-group
+            h2
+              label for='keyword' 1. Provide a single <b>Domain Keyword</b>
+            input.form-control type='text' id='keyword' name='keyword' required=nil placeholder="examples: Widget, User, Apple Pie, Twitter"
 
-        .col-md-4
-          .well
-            .form-group
-              h2
-                label for='role' 2. Class Role
+      .row
+        .col-md-8.col-md-offset-2
+          .form-group
+            h2
+              label for='role' 2. Describe the <b>Role</b> of your class
 
-              #role-options
-                - ClassType.roles.each do |role|
-                  label
-                    input type='radio' name='role' value=role
-                      = role
+            #role-options.well
+              - ClassType.roles.each_with_index do |role, i|
+                label
+                  input type='radio' name='role' value=role checked=(i==0)
+                    = role
 
       .row
         #submit.col-md-8.col-md-offset-2
-          input.btn.btn-primary.btn-lg.btn-block type='submit'
+          input.btn.btn-primary.btn-lg.btn-block type='submit' value="Nominate Class Names!"
