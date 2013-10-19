@@ -14,6 +14,7 @@ html.no-js
     /! Place favicon.ico and apple-touch-icon.png in the root directory
     link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
     link rel="stylesheet" href="/stylesheets/application.css"
+    link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"
 
   body
     /![if lt IE 7]
@@ -29,8 +30,9 @@ html.no-js
 
     header
       .container
-        .col-md-8.col-md-offset-2
-          p Nominate.io: Software Class Name Generator
+        .row
+          .col-md-10.col-md-offset-1
+            p <b>Nominate.io</b>: Software Class Name Generator. <b>Naming things is hard</b>, clip this to your toolbelt.
 
     #wrapper
       == yield
@@ -48,7 +50,7 @@ html.no-js
         .row
           .col-md-8.col-md-offset-2
             p.lead
-              | Made with love by @ccurtisj
+              | Made with <i class="icon-heart"></i> by <a href="http://twitter.com/ccurtisj" target="blank">@ccurtisj</a>
 
     script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"
     script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"

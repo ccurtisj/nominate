@@ -10,8 +10,8 @@ class ClassType
     'Interface'       => ['Adapter', 'Interface'],
     'Implementation'  => ['Command', 'Strategy'],
     'Job Queue'       => ['Job', 'Task', 'Worker'],
-    'Mixin'           => ['able'],
     'Messaging'       => ['Dispatch', 'Reporter', 'Queue'],
+    'Mixin'           => ['able'],
     'Proxy'           => ['Agent', 'Proxy'],
     'Structure'       => ['Composite', 'Iterator']
   }
