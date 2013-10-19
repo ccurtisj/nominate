@@ -1,8 +1,9 @@
 class ClassType
 
   TYPES_BY_ROLE = {
-    'Creation'  => ['Builder', 'Factory', 'Pool', 'Prototype'],
-    'Interface' => ['Adapter', 'Interface']
+    'Business Object' => [''],
+    'Creation'        => ['Builder', 'Factory', 'Pool', 'Prototype'],
+    'Interface'       => ['Adapter', 'Interface']
   }
 
   def self.roles
