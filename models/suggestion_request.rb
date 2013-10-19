@@ -29,7 +29,7 @@ class SuggestionRequest
       class_types.collect do |type|
         class_name + type
       end
-    end.flatten
+    end.flatten.reject(&:blank?)
   end
 
 

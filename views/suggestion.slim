@@ -1,13 +1,22 @@
 .container
   .row
-    .col-xs-12
-      a href="/" New
-  .row
     .col-md-10.col-md-offset-1
+
       - if @suggestions.any?
-        h1 Suggestion
-        ul
-          - @suggestions.each do |suggestion|
-            li= suggestion
+        
+        h1 Nominations
+        p.lead Let's see if any of these work for you
+
+        .well style="overflow:hidden;"
+          ul.nominations
+            - @suggestions.each do |suggestion|
+              li
+                span= suggestion
+        
+      
       - else
-        h2 Nothing
+        h1 Sorry, I got nothin'
+        
+
+      .try-again
+        a.btn.btn-default.btn-lg.btn-success href='/' Try something else
