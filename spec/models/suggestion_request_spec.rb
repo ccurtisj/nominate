@@ -1,7 +1,4 @@
-require 'sinatra'
 require File.join(File.dirname(__FILE__), '..', 'spec_helper')
-require File.join(File.dirname(__FILE__), '../..', 'models/suggestion_request')
-require File.join(File.dirname(__FILE__), '../..', 'models/class_type')
 
 describe SuggestionRequest do
 
@@ -32,8 +29,13 @@ describe SuggestionRequest do
 
     context "given a multiword synonym" do
 
-      before { Dinosaurus.should_receive(:synonyms_of)
-        .and_return(['bar bat baz'])}
+      before do
+        Dinosaurus.should_receive(:synonyms_of)
+          .and_return(['bar bat baz'])
+
+        allow(ClassType).to receive(:for_role)
+          .and_return([''])
+      end
 
       let(:suggestions) { SuggestionRequest.new('foo').suggestions }
 
@@ -44,8 +46,13 @@ describe SuggestionRequest do
 
     context "given duplicate synonyms" do
 
-      before { Dinosaurus.should_receive(:synonyms_of)
-        .and_return(['bar', 'bar'])}
+      before do
+        Dinosaurus.should_receive(:synonyms_of)
+          .and_return(['bar', 'bar'])
+
+        allow(ClassType).to receive(:for_role)
+          .and_return([''])
+      end
 
       subject { SuggestionRequest.new('foo').suggestions }
 
@@ -54,7 +61,6 @@ describe SuggestionRequest do
 
     context "given a role" do
 
-      let(:class_type) { ClassType.for_role('test_role') }
       let(:request) { SuggestionRequest.new('foo', 'test_role') }
 
       before do
@@ -66,7 +72,7 @@ describe SuggestionRequest do
       end
 
       it "includes the related class types" do
-        request.suggestions.should =~ ['Foo', 'Bar', 'FooFactory', 'BarFactory']
+        request.suggestions.should =~ ['FooFactory', 'BarFactory']
       end
     end
   end

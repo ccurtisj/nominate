@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'slim'
-require 'dinosaurus'
+Bundler.require(:default)
 require File.join(File.dirname(__FILE__),'models', 'suggestion_request')
 
 configure do

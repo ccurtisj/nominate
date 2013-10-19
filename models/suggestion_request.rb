@@ -19,13 +19,11 @@ class SuggestionRequest
 
     terms = [keyword] + synonyms
 
-    puts terms.inspect
-
-    class_names = terms.compact.collect{|keyword|
+    class_names = terms.uniq.compact.collect{|keyword|
       Classify.new.camelize(sanitize(keyword)).to_s
     }
 
-    class_types = [''] + ClassType.for_role(self.role)
+    class_types = ClassType.for_role(self.role)
 
     class_names.collect do |class_name|
       class_types.collect do |type|
