@@ -19,9 +19,9 @@ describe SuggestionRequest do
       let(:request) { SuggestionRequest.new('foo') }
 
       it "requests synonyms from big thesaurus" do
-        Dinosaurus.should_receive(:synonyms_of)
+        Dinosaurus.should_receive(:lookup)
           .with('foo')
-          .and_return(['bar'])
+          .and_return(mock_dinosaurus_response(['bar']))
 
         request.suggestions
       end
@@ -30,8 +30,8 @@ describe SuggestionRequest do
     context "given a multiword synonym" do
 
       before do
-        Dinosaurus.should_receive(:synonyms_of)
-          .and_return(['bar bat baz'])
+        Dinosaurus.should_receive(:lookup)
+          .and_return(mock_dinosaurus_response(['bar bat baz']))
 
         allow(ClassType).to receive(:for_role)
           .and_return([''])
@@ -47,8 +47,8 @@ describe SuggestionRequest do
     context "given duplicate synonyms" do
 
       before do
-        Dinosaurus.should_receive(:synonyms_of)
-          .and_return(['bar', 'bar'])
+        Dinosaurus.should_receive(:lookup)
+          .and_return(mock_dinosaurus_response(['bar', 'bar']))
 
         allow(ClassType).to receive(:for_role)
           .and_return([''])
@@ -67,8 +67,8 @@ describe SuggestionRequest do
         ClassType.should_receive(:for_role)
           .and_return(['Factory'])
 
-        Dinosaurus.should_receive(:synonyms_of)
-          .and_return(['bar'])
+        Dinosaurus.should_receive(:lookup)
+          .and_return(mock_dinosaurus_response(['bar']))
       end
 
       it "includes the related class types" do

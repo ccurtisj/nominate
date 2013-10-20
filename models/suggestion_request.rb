@@ -15,7 +15,7 @@ class SuggestionRequest
 
   def suggestions
     # byebug
-    synonyms = Dinosaurus.synonyms_of(keyword).uniq.sort
+    synonyms = Dinosaurus.lookup(keyword)[:noun]['syn'].uniq.sort
 
     terms = [keyword] + synonyms
 
