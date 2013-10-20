@@ -15,4 +15,4 @@ Here's a tool for making the naming part easier.
 
 ## http://nominate.io
 
-![](http://f.cl.ly/items/0V0Y3Z3Z362z3Y3c2f38/Screen%20Shot%202013-10-19%20at%201.45.25%20PM.png)
+![](http://f.cl.ly/items/1f311A1x1s0M320B000s/Screen%20Shot%202013-10-20%20at%202.36.18%20PM.png)
