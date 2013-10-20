@@ -40,7 +40,7 @@ describe SuggestionRequest do
       let(:suggestions) { SuggestionRequest.new('foo').suggestions }
 
       it "formats it in class style" do
-        suggestions.should eq ['Foo', 'BarBatBaz']
+        suggestions.should eq [['Foo', 'BarBatBaz']]
       end
     end
 
@@ -56,7 +56,7 @@ describe SuggestionRequest do
 
       subject { SuggestionRequest.new('foo').suggestions }
 
-      it { should eq ['Foo', 'Bar'] }
+      it { should eq [['Foo', 'Bar']] }
     end
 
     context "given a role" do
@@ -72,7 +72,7 @@ describe SuggestionRequest do
       end
 
       it "includes the related class types" do
-        request.suggestions.should =~ ['FooFactory', 'BarFactory']
+        request.suggestions.should =~ [['FooFactory', 'BarFactory']]
       end
     end
   end

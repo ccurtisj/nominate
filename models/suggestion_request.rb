@@ -25,11 +25,11 @@ class SuggestionRequest
 
     class_types = ClassType.for_role(self.role)
 
-    class_names.collect do |class_name|
-      class_types.collect do |type|
+    class_types.collect do |type|
+      class_names.collect do |class_name|
         class_name + type
       end
-    end.flatten.reject(&:blank?)
+    end.reject(&:blank?)
   end
 
 
