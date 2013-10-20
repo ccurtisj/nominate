@@ -15,7 +15,13 @@ class SuggestionRequest
 
   def suggestions
     # byebug
-    synonyms = Dinosaurus.lookup(keyword)[:noun]['syn'].uniq.sort
+
+    begin
+      synonyms = Dinosaurus.lookup(keyword)[:noun]['syn'].uniq.sort
+    rescue Exception => e
+      Airbrake.notify_or_ignore(e)
+      return []
+    end
 
     terms = [keyword] + synonyms
 

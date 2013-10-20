@@ -22,6 +22,10 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    airbrake (3.1.12)
+      activesupport
+      builder
+      json
     builder (3.0.4)
     byebug (2.3.0)
       columnize (~> 0.3.6)
@@ -33,6 +37,7 @@ GEM
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.6.1)
+    json (1.8.1)
     mongoid (3.1.2)
       activemodel (~> 3.2)
       moped (~> 1.4.2)
@@ -72,6 +77,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   byebug
   classify!
   dinosaurus!
