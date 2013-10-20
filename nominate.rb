@@ -6,6 +6,9 @@ require File.join(File.dirname(__FILE__),'models', 'suggestion_request')
 configure do
   set :views, File.dirname(__FILE__) + "/views"
   set :root, 	File.dirname(__FILE__)
+  enable :sessions
+
+  use Rack::Session::Cookie, :key => 'rack.session', :secret => 'b65HVtXRTuQnf3Fb'
 end
 
 Dinosaurus.configure do |config|
@@ -17,6 +20,9 @@ get '/' do
 end
 
 post '/suggestions' do
+  session['keyword'] = params[:keyword]
+  session['role']    = params[:role]
+
   @suggestions = SuggestionRequest.new(params[:keyword], params[:role]).suggestions
   slim :suggestion
 end

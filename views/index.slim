@@ -13,7 +13,7 @@
           .form-group
             h2
               label for='keyword' 1. Provide a single <b>Domain Keyword</b>
-            input.form-control type='text' id='keyword' name='keyword' required=true placeholder="examples: Widget, User, Apple Pie, Twitter"
+            input.form-control type='text' id='keyword' name='keyword' required=true placeholder="examples: Widget, User, Apple Pie, Twitter" value=session['keyword']
 
       .row
         .col-md-8.col-md-offset-2
@@ -26,7 +26,7 @@
                 - ClassType.roles.each_with_index do |role, i|
                   li
                     label
-                      input type='radio' name='role' value=role checked=(i==0)
+                      input type='radio' name='role' value=role checked=(role==session['role'])
                         = role
 
       .row
